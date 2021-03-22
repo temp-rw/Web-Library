@@ -15,4 +15,4 @@ To set up this app you need to:
 ---
 
 ## Test this app
-All queries for testing presented in [WebLibrary.postman_collection.json](https://github.com/temp-rw/Web-Library/blob/main/WebLibrary.postman_collection.json) file
+All requests for testing presented in [WebLibrary.postman_collection.json](https://github.com/temp-rw/Web-Library/blob/main/WebLibrary.postman_collection.json) file
