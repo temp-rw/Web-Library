@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "e3d8e625-248d-48e8-941a-d2f6a8e05b95",
+		"name": "WebLibrary",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all books",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/books/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search books by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/books/?search=new",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"books",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "new"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/book",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"FUCK OMON\",\r\n    \"cover\": \"no cover\",\r\n    \"author\": \"best author2\",\r\n    \"source_link\": \"new source_link2\",\r\n    \"genre\": 1,\r\n    \"description\": \"Book2 description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/library/books/create_book/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"books",
+						"create_book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cover\": \"no cover\",\r\n    \"title\": \"Updated book\",\r\n    \"author\": \"best author\",\r\n    \"source_link\": \"new source_link\",\r\n    \"description\": \"Book description\",\r\n    \"genre\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/library/book/2",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"book",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/book/2",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"book",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/users/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/library/user/1",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Test1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test1@lib.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123465789",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/library/user/register/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Anton\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/library/user/2",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/user/2",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"2"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/user/books/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add book to user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"book\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/library/user/add_book/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"add_book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"is_read\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/library/user/books/1",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove book from user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/library/user/remove_book/1",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"library",
+						"user",
+						"remove_book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login via refresh token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "refresh",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNjQzNzU4OSwianRpIjoiMjc2M2I1MzZkNTExNGRjYmE4YWU1NzQxNTVlYmUzN2UiLCJ1c2VyX2lkIjoxfQ.EyQxIi78JMlhXArhm6LoR1jc33OZyV2wZtDjI9b2uyA",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/api/token/refresh/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "artiom@lib.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/api/token/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzgzMTQxLCJqdGkiOiI4MDQ4MTI1Y2VlZGI0NTA0YWZjMDZhY2JkOWNiN2E1MiIsInVzZXJfaWQiOjF9.tBH7SSfTJngNYoEqAQfycgAnP3_bx0LtiHhFCrjy9Ss",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "127.0.0.1:8080"
+		}
+	]
+}
