@@ -73,21 +73,11 @@
 		{
 			"name": "Create book",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzU0Nzg5LCJqdGkiOiJkN2M3ZDg1MTZjNWE0YzlhODRlZDgxZWY1YTNjN2JlYSIsInVzZXJfaWQiOjF9.Aq-gSgcTJg2g3mmjE2U07v5ppdXgiiMtMwIsb3U2ma0",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"FUCK OMON\",\r\n    \"cover\": \"no cover\",\r\n    \"author\": \"best author2\",\r\n    \"source_link\": \"new source_link2\",\r\n    \"genre\": 1,\r\n    \"description\": \"Book2 description\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Best book ever\",\r\n    \"cover\": \"https://bipbap.ru/wp-content/uploads/2017/04/000000843.jpg\",\r\n    \"author\": \"best author2\",\r\n    \"source_link\": \"new source_link2\",\r\n    \"genre\": 1,\r\n    \"description\": \"Book2 description\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -244,6 +234,9 @@
 		{
 			"name": "Create user",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -512,6 +505,9 @@
 		{
 			"name": "Login",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -519,17 +515,12 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "Admin",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "artiom@lib.com",
+							"value": "Test1",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "123456789",
+							"value": "123465789",
 							"type": "text"
 						}
 					],
@@ -559,7 +550,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzgzMTQxLCJqdGkiOiI4MDQ4MTI1Y2VlZGI0NTA0YWZjMDZhY2JkOWNiN2E1MiIsInVzZXJfaWQiOjF9.tBH7SSfTJngNYoEqAQfycgAnP3_bx0LtiHhFCrjy9Ss",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDE0NjYyLCJqdGkiOiI5YjBkZmE0M2JhYWU0ZmQ4YWViNThiNTQ0NTY3YjA1MCIsInVzZXJfaWQiOjF9.Jn-tDJGWI5-1P3NW-DJuISTLUq9I4eW4pJsS1QVRnO4",
 				"type": "string"
 			}
 		]
