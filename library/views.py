@@ -41,7 +41,7 @@ class BookShelveView(viewsets.ModelViewSet):
         return BookShelf.objects.filter(owner=user)
 
     def get_object(self):
-        queryset = self.filter_queryset(self.get_queryset())
+        queryset = self.get_queryset()
         obj = queryset.get(pk=self.request.user.id)
         return obj
 
@@ -50,7 +50,7 @@ class BookShelveView(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             return Response(data={}, status=status.HTTP_200_OK)
-        return Response(data=serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
